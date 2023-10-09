@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +43,39 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBG0dJmKur_m-F4qPqRyMH2vXwoiL7LcXQ',
+    appId: '1:226157239542:web:db6926574c836de50760d7',
+    messagingSenderId: '226157239542',
+    projectId: 'contacts-app-flutter-firebase',
+    authDomain: 'contacts-app-flutter-firebase.firebaseapp.com',
+    storageBucket: 'contacts-app-flutter-firebase.appspot.com',
+    measurementId: 'G-MR1W46YC2C',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBEQrg45D7XgjW0ouJdusG8xNM--SbF7lY',
-    appId: '1:705724924854:android:7fb0b4fd265ec240c4b717',
-    messagingSenderId: '705724924854',
-    projectId: 'contacts-app-b5a05',
-    storageBucket: 'contacts-app-b5a05.appspot.com',
+    apiKey: 'AIzaSyAd9S5-CaZMvioBJG5yLcpBBGrnmJlQAgg',
+    appId: '1:226157239542:android:e73b516c299a8bd10760d7',
+    messagingSenderId: '226157239542',
+    projectId: 'contacts-app-flutter-firebase',
+    storageBucket: 'contacts-app-flutter-firebase.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCsTsCZWjPySgnZaUapu6vK1WzaUnzmWlQ',
+    appId: '1:226157239542:ios:593d46d4dccfe6ef0760d7',
+    messagingSenderId: '226157239542',
+    projectId: 'contacts-app-flutter-firebase',
+    storageBucket: 'contacts-app-flutter-firebase.appspot.com',
+    iosBundleId: 'com.example.contactsApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCsTsCZWjPySgnZaUapu6vK1WzaUnzmWlQ',
+    appId: '1:226157239542:ios:4ff83262272180f20760d7',
+    messagingSenderId: '226157239542',
+    projectId: 'contacts-app-flutter-firebase',
+    storageBucket: 'contacts-app-flutter-firebase.appspot.com',
+    iosBundleId: 'com.example.contactsApp.RunnerTests',
   );
 }
