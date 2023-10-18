@@ -153,7 +153,6 @@ class _HomepageState extends State<Homepage> {
                                         docID: document.id))),
                             leading: CircleAvatar(child: Text(data["name"][0])),
                             title: Text(data["name"]),
-                            subtitle: Text(data["phone"]),
                             trailing: IconButton(
                               icon: Icon(Icons.call),
                               onPressed: () {
