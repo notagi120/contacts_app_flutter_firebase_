@@ -7,8 +7,10 @@ class UpdateContact extends StatefulWidget {
       required this.docID,
       required this.name,
       required this.phone,
-      required this.email});
-  final String docID, name, phone, email;
+      required this.email,
+      required this.hobby,
+      required this.notes});
+  final String docID, name, phone, email, hobby, notes;
 
   @override
   State<UpdateContact> createState() => _UpdateContactState();
@@ -27,6 +29,8 @@ class _UpdateContactState extends State<UpdateContact> {
     _emailController.text = widget.email;
     _phoneController.text = widget.phone;
     _nameController.text = widget.name;
+    _hobbyController.text = widget.hobby;
+    _notesController.text = widget.notes;
 
     super.initState();
   }

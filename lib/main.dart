@@ -9,8 +9,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'controllers/auth_services.dart';
 import 'firebase_options.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeEnvVariables();  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

@@ -5,9 +5,9 @@ class CRUDService {
   User? user = FirebaseAuth.instance.currentUser;
 
 // add new contacts to firestore
-  Future addNewContacts(String name, String phone, String email) async {
+  Future addNewContacts(String name, String phone, String email, String hobby, String notes) async {
     //与えられた引数を使用して、dataという名前のMapオブジェクトを作成します。このマップはFirestoreに送信されるデータです。
-    Map<String, dynamic> data = {"name": name, "email": email, "phone": phone};
+    Map<String, dynamic> data = {"name": name, "email": email, "phone": phone, "hobby": hobby, "notes": notes};
     //try-catchブロックを使用してエラーハンドリングを行います。awaitキーワードを用いて非同期処理を行い、
     //Firestoreの特定の「ドキュメント」のcontactsコレクションに新しいドキュメント（dataマップ）を追加します。
     try {
@@ -68,8 +68,8 @@ class CRUDService {
 
   // update a contact
   Future updateContact(
-      String name, String phone, String email, String docID) async {
-    Map<String, dynamic> data = {"name": name, "email": email, "phone": phone};
+      String name, String phone, String email, String hobby, String notes, String docID) async {
+    Map<String, dynamic> data = {"name": name, "email": email, "phone": phone, "hobby": hobby, "notes":notes,};
     try {
       await FirebaseFirestore.instance
           .collection("users")

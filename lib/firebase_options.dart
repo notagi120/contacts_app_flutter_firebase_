@@ -7,16 +7,17 @@ import 'package:flutter/foundation.dart'
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 late String webApiKey, webAppId, androidApiKey, androidAppId, iosApiKey, iosAppId, macosApiKey, macosAppId;
-Future main() async {
+
+Future<void> initializeEnvVariables() async {
   await dotenv.load(fileName: ".env");
-  final webApiKey = DotEnv().env['WEB_API_KEY'];
-  final webAppId = DotEnv().env['WEB_APP_ID'];
-  final androidApiKey = DotEnv().env['ANDROID_API_KEY'];
-  final androidAppId = DotEnv().env['ANDROID_APP_ID'];
-  final iosApiKey = DotEnv().env['IOS_API_KEY'];
-  final iosAppId = DotEnv().env['IOS_APP_ID'];
-  final macosApiKey = DotEnv().env['MACOS_API_KEY'];
-  final macosAppId = DotEnv().env['MACOS_APP_ID'];
+  webApiKey = dotenv.env['WEB_API_KEY']!;
+  webAppId = dotenv.env['WEB_APP_ID']!;
+  androidApiKey = dotenv.env['ANDROID_API_KEY']!;
+  androidAppId = dotenv.env['ANDROID_APP_ID']!;
+  iosApiKey = dotenv.env['IOS_API_KEY']!;
+  iosAppId = dotenv.env['IOS_APP_ID']!;
+  macosApiKey = dotenv.env['MACOS_API_KEY']!;
+  macosAppId = dotenv.env['MACOS_APP_ID']!;
 }
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///

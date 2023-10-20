@@ -26,10 +26,13 @@ class AuthService {
 
   // logout the user
   Future logout() async {
-    await FirebaseAuth.instance.signOut();
-    // logout from google if logged in with google
-    if (await GoogleSignIn().isSignedIn()) {
-      await GoogleSignIn().signOut();
+    try {
+      await FirebaseAuth.instance.signOut();
+      if (await GoogleSignIn().isSignedIn()) {
+        await GoogleSignIn().signOut();
+      }
+    } catch (e) {
+      print("Error during sign out: $e");
     }
   }
 
