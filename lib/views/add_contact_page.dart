@@ -69,8 +69,6 @@ class _AddContactState extends State<AddContact> {
                 SizedBox(
                     width: MediaQuery.of(context).size.width * .9,
                     child: TextFormField(
-                      validator: (value) =>
-                          value!.isEmpty ? "Enter any name" : null,
                       controller: _hobbyController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
@@ -88,8 +86,6 @@ class _AddContactState extends State<AddContact> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * .9,
                   child: TextFormField(
-                    validator: (value) =>
-                        value!.isEmpty ? "Enter any name" : null,
                     controller: _notesController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
