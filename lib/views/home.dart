@@ -121,6 +121,7 @@ class _HomepageState extends State<Homepage> {
           )
         ],
       )),
+      // StreamBuilderはFirestoreからのデータのリアルタイムな更新をハンドリング
       body: StreamBuilder<QuerySnapshot>(
           stream: _stream,
           builder:
@@ -150,6 +151,8 @@ class _HomepageState extends State<Homepage> {
                                         name: data["name"],
                                         phone: data["phone"],
                                         email: data["email"],
+                                        hobby: data["hobby"],
+                                        notes: data["notes"],
                                         docID: document.id))),
                             leading: CircleAvatar(child: Text(data["name"][0])),
                             title: Text(data["name"]),

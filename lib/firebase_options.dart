@@ -44,8 +44,8 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBG0dJmKur_m-F4qPqRyMH2vXwoiL7LcXQ',
-    appId: '1:226157239542:web:db6926574c836de50760d7',
+    apiKey: '',
+    appId: '',
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     authDomain: 'contacts-app-flutter-firebase.firebaseapp.com',
@@ -54,16 +54,16 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAd9S5-CaZMvioBJG5yLcpBBGrnmJlQAgg',
-    appId: '1:226157239542:android:e73b516c299a8bd10760d7',
+    apiKey: '',
+    appId: '',
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCsTsCZWjPySgnZaUapu6vK1WzaUnzmWlQ',
-    appId: '1:226157239542:ios:593d46d4dccfe6ef0760d7',
+    apiKey: '',
+    appId: '',
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',
@@ -71,8 +71,8 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCsTsCZWjPySgnZaUapu6vK1WzaUnzmWlQ',
-    appId: '1:226157239542:ios:4ff83262272180f20760d7',
+    apiKey: '',
+    appId: '',
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',

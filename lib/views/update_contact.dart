@@ -18,6 +18,8 @@ class _UpdateContactState extends State<UpdateContact> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _phoneController = TextEditingController();
+  TextEditingController _hobbyController = TextEditingController();
+  TextEditingController _notesController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -78,6 +80,40 @@ class _UpdateContactState extends State<UpdateContact> {
                       ),
                     )),
                 SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                    width: MediaQuery.of(context).size.width * .9,
+                    child: TextFormField(
+                      controller: _hobbyController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        label: Text("Hobby"),
+                        alignLabelWithHint: true, // Aligns the label at the top-left corner
+                      ),
+                      maxLines: 2, 
+                      keyboardType: TextInputType.multiline,
+                      textInputAction: TextInputAction.newline, 
+                    ),
+                  ),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .9,
+                  child: TextFormField(
+                    controller: _notesController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      label: Text("Notes"),
+                      alignLabelWithHint: true, // Aligns the label at the top-left corner
+                    ),
+                    maxLines: 7, 
+                    keyboardType: TextInputType.multiline,
+                    textInputAction: TextInputAction.newline, // Adds new line on enter key
+                  ),
+                ),
+                SizedBox(
                   height: 10,
                 ),
                 SizedBox(
@@ -90,6 +126,8 @@ class _UpdateContactState extends State<UpdateContact> {
                                 _nameController.text,
                                 _phoneController.text,
                                 _emailController.text,
+                                _hobbyController.text,
+                                _notesController.text,
                                 widget.docID);
                             Navigator.pop(context);
                           }
