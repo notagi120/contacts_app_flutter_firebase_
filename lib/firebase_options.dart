@@ -4,6 +4,20 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+late String webApiKey, webAppId, androidApiKey, androidAppId, iosApiKey, iosAppId, macosApiKey, macosAppId;
+Future main() async {
+  await dotenv.load(fileName: ".env");
+  final webApiKey = DotEnv().env['WEB_API_KEY'];
+  final webAppId = DotEnv().env['WEB_APP_ID'];
+  final androidApiKey = DotEnv().env['ANDROID_API_KEY'];
+  final androidAppId = DotEnv().env['ANDROID_APP_ID'];
+  final iosApiKey = DotEnv().env['IOS_API_KEY'];
+  final iosAppId = DotEnv().env['IOS_APP_ID'];
+  final macosApiKey = DotEnv().env['MACOS_API_KEY'];
+  final macosAppId = DotEnv().env['MACOS_APP_ID'];
+}
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -43,9 +57,9 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: '',
-    appId: '',
+  static final FirebaseOptions web = FirebaseOptions(
+    apiKey:webApiKey,
+    appId: webAppId,
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     authDomain: 'contacts-app-flutter-firebase.firebaseapp.com',
@@ -53,26 +67,26 @@ class DefaultFirebaseOptions {
     measurementId: 'G-MR1W46YC2C',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '',
-    appId: '',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: androidApiKey,
+    appId: androidAppId,
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: '',
-    appId: '',
+  static final FirebaseOptions ios = FirebaseOptions(
+    apiKey: iosApiKey,
+    appId: iosAppId,
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',
     iosBundleId: 'com.example.contactsApp',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: '',
-    appId: '',
+  static final FirebaseOptions macos = FirebaseOptions(
+    apiKey: macosApiKey,
+    appId: macosAppId,
     messagingSenderId: '226157239542',
     projectId: 'contacts-app-flutter-firebase',
     storageBucket: 'contacts-app-flutter-firebase.appspot.com',
